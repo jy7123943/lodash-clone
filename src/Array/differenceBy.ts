@@ -11,7 +11,7 @@ import { difference } from './difference';
  * Returns - (Array): Returns the new array of filtered values.
  */
 
-type Iteratee = (param: any) => any;
+type Iteratee = (arrValue: any) => any;
 
 const executeIteratee = (
   iteratee: string | number | Iteratee,
@@ -22,7 +22,7 @@ const executeIteratee = (
     : value[iteratee as (string | number)]
 );
 
-export const differenceBy = <T>(
+export const differenceBy = (
   array: unknown[],
   values?: unknown[],
   iteratee?: string | number | Iteratee,
