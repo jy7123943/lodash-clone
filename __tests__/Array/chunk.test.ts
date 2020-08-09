@@ -5,6 +5,15 @@ describe('chunk', () => {
     expect(chunk([], 2)).toStrictEqual([]);
   });
 
+  it('returns empty array if size is 0', () => {
+    expect(chunk([1, 2, 3], 0)).toStrictEqual([]);
+  });
+
+  it('has default size, 1', () => {
+    expect(chunk([1, 2, 3])).toStrictEqual([[1], [2], [3]]);
+    expect(chunk([1, 2, 3], 1)).toStrictEqual([[1], [2], [3]]);
+  });
+
   it('returns new array (not a reference)', () => {
     const inputArray: any[] = [];
     const result = chunk(inputArray, 2);

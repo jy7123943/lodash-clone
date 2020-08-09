@@ -7,8 +7,8 @@
  * (Array): Returns the new array of chunks.
  */
 
-export const chunk = <T>(array: T[], size: number): T[][] => {
-  if (!Array.isArray(array) || !array.length) return [];
+export const chunk = <T>(array: T[], size = 1): T[][] => {
+  if (!Array.isArray(array) || !array.length || !size) return [];
 
   const count = Math.floor((array.length / size) + (array.length % size && 1));
 
