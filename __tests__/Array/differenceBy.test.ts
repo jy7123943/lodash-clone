@@ -1,17 +1,22 @@
 import { differenceBy } from 'src/Array/differenceBy';
 
 describe('differenceBy', () => {
+  const mockFn = (v: any) => v;
+
   it('returns empty array if array passed as first param is empty', () => {
     expect(differenceBy([])).toStrictEqual([]);
     expect(differenceBy([], [2, 3])).toStrictEqual([]);
+    expect(differenceBy([], [2, 3], mockFn)).toStrictEqual([]);
   });
 
   it('returns copy of the first param if the second param is undefined', () => {
     expect(differenceBy([1, 2])).toStrictEqual([1, 2]);
+    expect(differenceBy([1, 2], undefined, mockFn)).toStrictEqual([1, 2]);
   });
 
   it('returns copy of the first param if the second param is an empty array', () => {
     expect(differenceBy([1, 2], [])).toStrictEqual([1, 2]);
+    expect(differenceBy([1, 2], [], mockFn)).toStrictEqual([1, 2]);
   });
 
   it('returns new array (not a reference)', () => {
