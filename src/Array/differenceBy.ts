@@ -27,7 +27,7 @@ export const differenceBy = <T>(
   values?: unknown[],
   iteratee?: string | number | Iteratee,
 ): unknown[] => {
-  if (!values || iteratee === undefined) return difference(array, values);
+  if (iteratee === undefined) return difference(array, values);
 
   if (!Array.isArray(array) || !array.length) return [];
   if (!Array.isArray(values) || !values?.length) return array.slice();
