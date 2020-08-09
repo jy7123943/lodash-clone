@@ -6,6 +6,14 @@ describe('Array', () => {
       expect(chunk([], 2)).toStrictEqual([]);
     });
 
+    it('returns new array (not a reference)', () => {
+      const inputArray: any[] = [];
+      const result = chunk(inputArray, 2);
+
+      expect(result).toStrictEqual([]);
+      expect(result).not.toBe(inputArray);
+    });
+
     it('successfully creates an array of elements slit into groups the length of size', () => {
       expect(chunk([1, 2, 3, 4], 2)).toStrictEqual([[1, 2], [3, 4]]);
 
