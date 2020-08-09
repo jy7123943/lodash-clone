@@ -7,7 +7,7 @@
  * Returns - (Array): Returns the new array of filtered values.
  */
 
-export const difference = (array: any[], values?: any[]): any[] => {
+export const difference = <T>(array: T[], values?: any[]): T[] => {
   if (!Array.isArray(array) || !array.length) return [];
   if (!values || !Array.isArray(values) || !values?.length) return array.slice();
 
