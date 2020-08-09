@@ -1,0 +1,8 @@
+/node_modules
+/src
+*.config.*
+/__tests__
+package-lock.json
+.babelrc
+.eslintrc.js
+tsconfig.json
