@@ -1,4 +1,4 @@
-import { chunk } from '../../src/Array/chunk';
+import { chunk } from 'src/Array/chunk';
 
 describe('Array', () => {
   describe('01. chunk', () => {

@@ -14,7 +14,7 @@
     "strict": true,
     "resolveJsonModule": true,
     "paths": {
-      "@": ["src/*"]
+      "src": ["src/*"]
     },
     "types": ["jest"],
     "plugins": [

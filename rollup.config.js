@@ -1,3 +1,4 @@
+import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -17,6 +18,11 @@ export default {
   ],
   external: [/@babel\/runtime/],
   plugins: [
+    alias({
+      entries: [
+        { find: 'src', replacement: './src' },
+      ],
+    }),
     peerDepsExternal(),
     commonjs(),
     resolve({
