@@ -3,7 +3,7 @@
  * Arguments
  * - array (Array): The array to concatenate.
  * - [values] (...*): The values to concatenate.
- * Returns - (Array): (Array): Returns the new concatenated array.
+ * Returns - (Array): Returns the new concatenated array.
  */
 
 export const concat = <T, K>(array: T[], ...values: (K[] | K[][])): (T | K | K[])[] => {
