@@ -21,17 +21,17 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'max-len': ['error', {
       'code': 100,
-      'ignoreComments': false,
+      'ignoreComments': true,
       'ignoreUrls': true,
     }],
     'semi': 2,
     'indent': [
       'error', 2,
-      { 'SwitchCase': 1 }
+      { 'SwitchCase': 1 },
     ],
     'padding-line-between-statements': [
       'error',
-      { 'blankLine': 'always', 'prev': '*', 'next': 'return' }
+      { 'blankLine': 'always', 'prev': '*', 'next': 'return' },
     ],
     'simple-import-sort/sort': 'error',
     'sort-imports': 'off',
