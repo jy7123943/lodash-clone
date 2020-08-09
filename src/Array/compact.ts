@@ -5,7 +5,7 @@
  */
 
 export const compact = <T>(array: T[]): T[] => {
-  if (!Array.isArray(array) || !array.length) return [];
+  if (!array.length) return [];
 
   return array.filter(v => v);
 };

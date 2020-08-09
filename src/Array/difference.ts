@@ -8,8 +8,8 @@
  */
 
 export const difference = <T>(array: T[], values?: unknown[]): T[] => {
-  if (!Array.isArray(array) || !array.length) return [];
-  if (!values || !Array.isArray(values) || !values?.length) return array.slice();
+  if (!array.length) return [];
+  if (!values || !values?.length) return array.slice();
 
   return array.filter(item => !values.includes(item));
 };

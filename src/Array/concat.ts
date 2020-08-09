@@ -7,7 +7,7 @@
  */
 
 export const concat = <T, K>(array: T[], ...values: (K[] | K[][])): (T | K | K[])[] => {
-  if (!Array.isArray(array) || !array.length) return [];
+  if (!array.length) return [];
 
   const result: (T | K | K[])[] = array.slice();
 

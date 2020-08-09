@@ -17,8 +17,8 @@ export const differenceWith = <T, K>(
 ): T[] => {
   if (!comparator) return difference(array, values);
 
-  if (!Array.isArray(array) || !array.length) return [];
-  if (!Array.isArray(values) || !values?.length) return array.slice();
+  if (!array.length) return [];
+  if (!values?.length) return array.slice();
 
   return array.filter(arrVal => (
     !values.some((othVal) => comparator(arrVal, othVal))

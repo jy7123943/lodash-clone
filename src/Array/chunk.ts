@@ -8,7 +8,7 @@
  */
 
 export const chunk = <T>(array: T[], size = 1): T[][] => {
-  if (!Array.isArray(array) || !array.length || !size) return [];
+  if (!array.length || !size) return [];
 
   const count = Math.floor((array.length / size) + (array.length % size && 1));
 
