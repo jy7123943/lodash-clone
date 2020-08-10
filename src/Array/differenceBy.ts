@@ -1,3 +1,5 @@
+import { createIteratee } from 'src/utils';
+
 import { difference } from './difference';
 
 /** differenceBy(array, [values], [iteratee=_.identity])
@@ -13,15 +15,6 @@ import { difference } from './difference';
 
 type Iteratee = (arrValue: any) => any;
 
-const executeIteratee = (
-  iteratee: string | number | Iteratee,
-  value: any,
-) => (
-  typeof iteratee === 'function'
-    ? (iteratee as Iteratee)(value)
-    : value[iteratee as (string | number)]
-);
-
 export const differenceBy = (
   array: unknown[],
   values?: unknown[],
@@ -31,10 +24,11 @@ export const differenceBy = (
 
   if (!array.length) return [];
   if (!values?.length) return array.slice();
+  const newIteratee = createIteratee(iteratee);
 
-  const comparison = values.map(v => executeIteratee(iteratee, v));
+  const comparison = values.map(v => newIteratee(v));
 
   return array.filter(v => !comparison.includes(
-    executeIteratee(iteratee, v),
+    newIteratee(v),
   ));
 };
