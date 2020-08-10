@@ -27,20 +27,3 @@ export const countBy = (
     return result;
   }, {});
 };
-
-
-// _.countBy([6.1, 4.2, 6.3], Math.floor);
-// // => { '4': 1, '6': 2 }
-//  
-// // The `_.property` iteratee shorthand.
-// _.countBy(['one', 'two', 'three'], 'length');
-// // => { '3': 2, '5': 1 }
-
-// _.countBy({'hello': 'one', 'world': 'two'}, 'length');
-// // => { 3: 2 }
-
-// _.countBy({'hello': 'one', 'world': 'two'});
-// Object {one: 1, two: 1}
-
-// _.countBy(['one', 'two', 'three']);
-// {one: 1, three: 1, two: 1}
