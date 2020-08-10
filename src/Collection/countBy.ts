@@ -13,7 +13,7 @@ type Iteratee = (arrValue: any) => any;
 
 export const countBy = (
   collection: any[] | Record<string, any>,
-  iteratee: string | number | Iteratee,
+  iteratee?: string | number | Iteratee,
 ): Record<string, any> => {
   const target = Array.isArray(collection)
     ? collection
@@ -21,7 +21,7 @@ export const countBy = (
   const newIteratee = createIteratee(iteratee);
 
   return target.reduce((result, current) => {
-    const key = newIteratee(current);
+    const key = newIteratee ? newIteratee(current) : current;
     result[key] = result[key] ? result[key] + 1 : 1;
 
     return result;
