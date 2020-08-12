@@ -18,7 +18,7 @@ export const countBy = (
   const target = Array.isArray(collection)
     ? collection
     : Object.values(collection);
-  const newIteratee = createIteratee(iteratee);
+  const newIteratee = iteratee !== undefined && createIteratee(iteratee);
 
   return target.reduce((result, current) => {
     const key = newIteratee ? newIteratee(current) : current;
