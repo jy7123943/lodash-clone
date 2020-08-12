@@ -8,23 +8,32 @@
  * (*): Returns collection.
  */
 
-type Collection<T> = T[] | Record<string, T>;
+type ArrayCollection<T> = (value: T, key: number, collection: T[]) => any;
+type ObjectCollection<T> = (value: any, key: string, collection: Record<string, any>) => any;
 
 export const forEach = <T>(
-  collection: Collection<T>,
-  iteratee?: (value: T, key: number | string, collection: Collection<T>) => T,
-): Collection<T> => {
+  collection: T[] | Record<string, T>,
+  iteratee?: ArrayCollection<T> | ObjectCollection<T>,
+): T[] | Record<string, T> => {
   const isArray = Array.isArray(collection);
 
   if (!iteratee) return collection;
 
   if (isArray) {
     (collection as T[]).forEach((value, idx) => {
-      iteratee(value, idx, collection);
+      (iteratee as ArrayCollection<T>)(
+        value,
+        idx,
+        collection as T[],
+      );
     });
   } else {
-    for (const key in collection) {
-      iteratee((collection as Record<string, T>)[key], key, collection);
+    for (const key in collection as Record<string, T>) {
+      (iteratee as ObjectCollection<T>)(
+        (collection as Record<string, T>)[key],
+        key,
+        collection as Record<string, T>,
+      );
     }
   }
 
