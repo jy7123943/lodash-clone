@@ -15,6 +15,7 @@ type ObjectPredicate<T> = (value: T, key: string, collection: Record<string, T>)
 export const find = <T>(
   collection: T[] | Record<string, T>,
   predicate?: ArrayPredicate<T> | ObjectPredicate<T>,
+  fromIndex = 0,
 ): T | undefined => {
   const isArray = Array.isArray(collection);
 
@@ -23,17 +24,19 @@ export const find = <T>(
   if (isArray) {
     const list = collection as T[];
 
-    for (let i = 0; i < list.length; i++) {
+    for (let i = fromIndex; i < list.length; i++) {
       if ((predicate as ArrayPredicate<T>)(list[i], i, list)) {
         return list[i];
       }
     }
   } else {
     const list = collection as Record<string, T>;
+    const values = Object.values(collection);
+    const keys = Object.keys(collection);
 
-    for (const key in list) {
-      if ((predicate as ObjectPredicate<T>)(list[key], key, list)) {
-        return list[key];
+    for (let i = fromIndex; i < values.length; i++) {
+      if ((predicate as ObjectPredicate<T>)(values[i], keys[i], list)) {
+        return values[i];
       }
     }
   }
