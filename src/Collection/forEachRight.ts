@@ -8,26 +8,30 @@
  * (*): Returns collection.
  */
 
-type ArrayCollection<T> = (value: T, key: number, collection: T[]) => any;
-type ObjectCollection<T> = (value: any, key: string, collection: Record<string, any>) => any;
+type ArrayIteratee<T> = (value: T, key: number, collection: T[]) => any;
+type ObjectIteratee<T> = (value: any, key: string, collection: Record<string, any>) => any;
 
 export const forEachRight = <T>(
   collection: T[] | Record<string, T>,
-  iteratee?: ArrayCollection<T> | ObjectCollection<T>,
+  iteratee?: ArrayIteratee<T> | ObjectIteratee<T>,
 ): T[] | Record<string, T> => {
   if (!iteratee) return collection;
 
   const isArray = Array.isArray(collection);
 
-  const lists = isArray
-    ? collection as T[]
-    : (Object.values(collection)) as T[];
-  const keys = !isArray && Object.keys(collection);
+  if (isArray) {
+    const list = collection as T[];
 
-  for (let i = lists.length - 1; i >= 0; i--) {
-    keys
-      ? (iteratee as ObjectCollection<T>)(lists[i], keys[i], collection)
-      : (iteratee as ArrayCollection<T>)(lists[i], i, lists);
+    for (let i = list.length - 1; i >= 0; i--) {
+      (iteratee as ArrayIteratee<T>)(list[i], i, list);
+    }
+  } else {
+    const values = Object.values(collection as Record<string, T>);
+    const keys = Object.keys(collection as Record<string, T>);
+
+    for (let i = values.length - 1; i >= 0; i--) {
+      (iteratee as ObjectIteratee<T>)(values[i], keys[i], collection);
+    }
   }
 
   return collection;
