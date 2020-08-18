@@ -41,6 +41,7 @@ describe('filter', () => {
     expect(
       filter([1, 'a', 2], (value: any) => typeof value === 'number'),
     ).toStrictEqual([1, 2]);
+
     expect(
       filter(['a', 'b'], (value: any) => typeof value === 'number'),
     ).toStrictEqual([]);
