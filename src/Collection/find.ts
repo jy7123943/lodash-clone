@@ -4,8 +4,8 @@
  * Arguments
  * - collection (Array|Object): The collection to iterate over.
  * - [predicate=_.identity] (Function): The function invoked per iteration.
- * Returns
  * - [fromIndex=0] (number): The index to search from.
+ * Returns
  * (*): Returns the matched element, else undefined.
  */
 
