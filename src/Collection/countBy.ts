@@ -15,9 +15,7 @@ export const countBy = (
   collection: any[] | Record<string, any>,
   iteratee?: string | number | Iteratee,
 ): Record<string, any> => {
-  const target = Array.isArray(collection)
-    ? collection
-    : Object.values(collection);
+  const target = Object.values(collection);
   const newIteratee = iteratee !== undefined && createIteratee(iteratee);
 
   return target.reduce((result, current) => {

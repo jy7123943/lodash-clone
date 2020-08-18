@@ -18,9 +18,7 @@ export const filter = <T>(
   const isArray = Array.isArray(collection);
 
   if (!predicate) {
-    return isArray
-      ? (collection as T[]).slice()
-      : Object.values(collection);
+    return Object.values(collection);
   }
 
   const result: T[] = [];
