@@ -22,4 +22,10 @@ describe('after', () => {
     newFn();
     expect(func).toHaveBeenCalledTimes(2);
   });
+
+  it('returns the result of the func invocation', () => {
+    const newFn = after(0, () => true);
+
+    expect(newFn()).toBe(true);
+  });
 });

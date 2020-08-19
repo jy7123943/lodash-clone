@@ -15,7 +15,7 @@ export const after = (n: number, func: Func): Func => {
 
   return () => {
     if (++count >= n) {
-      func();
+      return func();
     }
   };
 };
