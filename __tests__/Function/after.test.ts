@@ -23,12 +23,6 @@ describe('after', () => {
     expect(func).toHaveBeenCalledTimes(2);
   });
 
-  it('returns the result of the func invocation', () => {
-    const newFn = after(0, () => true);
-
-    expect(newFn()).toBe(true);
-  });
-
   it('creates a function that invokes func, with arguments of the created function', () => {
     const newFn = after(0, (a: number, b: number) => a + b);
 
