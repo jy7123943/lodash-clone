@@ -14,9 +14,9 @@ export const before = (n: number, func: Func): Func => {
   let count = 0;
   let lastResult: any;
 
-  return () => {
+  return (...params) => {
     if (++count < n) {
-      lastResult = func();
+      lastResult = func(...params);
     }
 
     return lastResult;
