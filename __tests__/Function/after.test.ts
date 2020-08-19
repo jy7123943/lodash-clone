@@ -28,4 +28,10 @@ describe('after', () => {
 
     expect(newFn()).toBe(true);
   });
+
+  it('creates a function that invokes func, with arguments of the created function', () => {
+    const newFn = after(0, (a: number, b: number) => a + b);
+
+    expect(newFn(1, 2)).toBe(3);
+  });
 });

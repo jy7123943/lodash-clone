@@ -13,9 +13,9 @@ type Func = (...args: any[]) => any;
 export const after = (n: number, func: Func): Func => {
   let count = 0;
 
-  return () => {
+  return (...params) => {
     if (++count >= n) {
-      return func();
+      return func(...params);
     }
   };
 };
