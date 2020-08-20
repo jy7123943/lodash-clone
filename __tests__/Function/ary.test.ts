@@ -1,4 +1,4 @@
-import { ary } from 'src/Function/ary';
+import { ary } from 'src/index';
 
 describe('ary', () => {
   it('returns a function', () => {

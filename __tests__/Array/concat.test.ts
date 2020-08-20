@@ -1,4 +1,4 @@
-import { concat } from 'src/Array/concat';
+import { concat } from 'src/index';
 
 describe('concat', () => {
   it('returns empty array if array passed as first param is empty', () => {

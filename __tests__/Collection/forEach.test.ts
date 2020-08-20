@@ -1,4 +1,4 @@
-import { forEach } from 'src/Collection/forEach';
+import { forEach } from 'src/index';
 
 describe('forEach', () => {
   it('iterates over elements of array and invokes iteratee for each element', () => {

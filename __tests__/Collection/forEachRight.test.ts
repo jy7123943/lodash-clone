@@ -1,4 +1,4 @@
-import { forEachRight } from 'src/Collection/forEachRight';
+import { forEachRight } from 'src/index';
 
 describe('forEachRight', () => {
   it('iterates over elements of array and invokes iteratee for each element', () => {

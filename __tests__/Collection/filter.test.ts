@@ -1,4 +1,4 @@
-import { filter } from 'src/Collection/filter';
+import { filter } from 'src/index';
 
 describe('filter', () => {
   it(`returns array of original collection's value if predicate is undefined`, () => {

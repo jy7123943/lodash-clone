@@ -1,4 +1,4 @@
-import { after } from 'src/Function/after';
+import { after } from 'src/index';
 
 describe('after', () => {
   it('returns a function', () => {

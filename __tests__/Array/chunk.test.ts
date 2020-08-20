@@ -1,4 +1,4 @@
-import { chunk } from 'src/Array/chunk';
+import { chunk } from 'src/index';
 
 describe('chunk', () => {
   it('returns empty array if array passed as first param is empty', () => {

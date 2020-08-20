@@ -1,4 +1,4 @@
-import { compact } from 'src/Array/compact';
+import { compact } from 'src/index';
 
 describe('compact', () => {
   it('returns empty array if array passed as first param is empty', () => {

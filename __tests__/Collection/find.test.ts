@@ -1,4 +1,4 @@
-import { find } from 'src/Collection/find';
+import { find } from 'src/index';
 
 describe('find', () => {
   it(`returns first value of collection if predicate is undefined`, () => {

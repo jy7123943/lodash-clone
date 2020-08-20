@@ -1,4 +1,4 @@
-import { differenceWith } from 'src/Array/differenceWith';
+import { differenceWith } from 'src/index';
 
 describe('differenceWith', () => {
   const mockFn = (x: number, y: number) => !!(x + y);

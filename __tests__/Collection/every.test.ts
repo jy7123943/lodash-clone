@@ -1,4 +1,4 @@
-import { every } from 'src/Collection/every';
+import { every } from 'src/index';
 
 describe('every', () => {
   it('returns true if predicate is undefined', () => {

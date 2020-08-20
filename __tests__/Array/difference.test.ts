@@ -1,4 +1,4 @@
-import { difference } from 'src/Array/difference';
+import { difference } from 'src/index';
 
 describe('difference', () => {
   it('returns empty array if array passed as first param is not an array or empty', () => {

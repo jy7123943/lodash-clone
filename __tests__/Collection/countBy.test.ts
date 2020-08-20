@@ -1,4 +1,4 @@
-import { countBy } from 'src/Collection/countBy';
+import { countBy } from 'src/index';
 
 describe('countBy', () => {
   it('case - collection: array / iteratee: function', () => {

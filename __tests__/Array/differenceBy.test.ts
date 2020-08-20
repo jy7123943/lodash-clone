@@ -1,4 +1,4 @@
-import { differenceBy } from 'src/Array/differenceBy';
+import { differenceBy } from 'src/index';
 
 describe('differenceBy', () => {
   const mockFn = (v: any) => v;

@@ -1,4 +1,4 @@
-import { before } from 'src/Function/before';
+import { before } from 'src/index';
 
 describe('before', () => {
   it('returns a function', () => {
