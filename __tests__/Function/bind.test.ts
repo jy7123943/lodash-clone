@@ -7,6 +7,16 @@ describe('bind', () => {
     expect(typeof result).toBe('function');
   });
 
+  it('creates a function that invokes func with partials', () => {
+    const mockFn = jest.fn();
+    const newFn = bind(mockFn, null, 1, 2);
+
+    newFn(3, 4);
+
+    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledWith(1, 2, 3, 4);
+  });
+
   it('creates a function that invokes func with the this binding of thisArg', () => {
     const mockThis = {
       a: 1,
