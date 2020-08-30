@@ -13,27 +13,12 @@ import { _ } from 'src/index';
 
 type Func = (...args: any[]) => any;
 
-export const bind = <T>(func: Func, thisArg: ThisType<T> | null, ...partials: any[]): Func => {
-
-  return function(...params) {
+export const bind = <T>(func: Func, thisArg: ThisType<T> | null, ...partials: any[]): Func => (
+  (...params) => {
     const copiedParams = params.slice();
 
     const newPartials = partials.map(partial => partial === _ ? copiedParams.shift() : partial);
-    func.apply(thisArg, newPartials.concat(copiedParams));
-  };
-};
 
-// function greet(greeting, punctuation) {
-//     return greeting + ' ' + this.user + punctuation;
-//   }
-//    
-//   var object = { 'user': 'fred' };
-//    
-//   var bound = _.bind(greet, object, 'hi');
-//   bound('!');
-//   // => 'hi fred!'
-//    
-//   // Bound with placeholders.
-//   var bound = _.bind(greet, object, _, '!');
-//   bound('hi');
-//   // => 'hi fred!'
+    return func.apply(thisArg, newPartials.concat(copiedParams));
+  }
+);
