@@ -1,5 +1,5 @@
 import { _ } from 'src/index';
-/** bind(func, thisArg, [partials])
+/** bindKey(object, key, [partials])
  * Creates a function that invokes the method at object[key] with partials prepended to the arguments it receives.
  * This method differs from _.bind by allowing bound functions to reference methods that may be redefined or don't yet exist. See Peter Michaux's article for more details.
  * The _.bindKey.placeholder value, which defaults to _ in monolithic builds, may be used as a placeholder for partially applied arguments.
@@ -17,7 +17,7 @@ type Func = (...args: any[]) => any;
 export const bindKey = <T>(
   object: Record<string, any | Func>,
   key: string,
-  ...partials: (T | string)[]
+  ...partials: (T | typeof _)[]
 ): Func => (
     (...params) => {
       const copiedParams = params.slice();

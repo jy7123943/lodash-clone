@@ -13,12 +13,16 @@ import { _ } from 'src/index';
 
 type Func = (...args: any[]) => any;
 
-export const bind = <T>(func: Func, thisArg: ThisType<T> | null, ...partials: any[]): Func => (
-  (...params) => {
-    const copiedParams = params.slice();
+export const bind = <T, K>(
+  func: Func,
+  thisArg: ThisType<T> | null,
+  ...partials: (K | typeof _)[]
+): Func => (
+    (...params) => {
+      const copiedParams = params.slice();
 
-    const newPartials = partials.map(partial => partial === _ ? copiedParams.shift() : partial);
+      const newPartials = partials.map(partial => partial === _ ? copiedParams.shift() : partial);
 
-    return func.apply(thisArg, newPartials.concat(copiedParams));
-  }
-);
+      return func.apply(thisArg, newPartials.concat(copiedParams));
+    }
+  );
