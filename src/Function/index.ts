@@ -3,6 +3,7 @@ import { ary } from './ary';
 import { before } from './before';
 import { bind } from './bind';
 import { bindKey } from './bindKey';
+import { curry } from './curry';
 
 export {
   after,
@@ -10,4 +11,5 @@ export {
   before,
   bind,
   bindKey,
+  curry,
 };
