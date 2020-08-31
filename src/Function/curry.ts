@@ -14,13 +14,11 @@ import { _ } from 'src/index';
 type Func = (...args: any[]) => any;
 
 export const curry = (func: Func, arity = func.length): Func => {
-  const newFn: Func = (...params) => {
+  return (...params) => {
     if (params.length < arity) {
-      return newFn.bind(null, ...params);
+      return curry(func.bind(null, ...params), arity - params.length);
     } else {
       return func.call(null, ...params);
     }
   };
-
-  return newFn;
 };
