@@ -22,5 +22,6 @@ describe('curry', () => {
     expect(newFn(1)(2)(3)).toStrictEqual([1, 2, 3]);
     expect(newFn(1, 2)(3)).toStrictEqual([1, 2, 3]);
     expect(newFn(1, 2, 3)).toStrictEqual([1, 2, 3]);
+    // console.log(newFn(1)(_, 3)(2))
   });
 });
