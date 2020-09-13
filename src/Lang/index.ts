@@ -8,6 +8,7 @@ import { isBoolean } from './isBoolean';
 import { isDate } from './isDate';
 import { isFunction } from './isFunction';
 import { isInteger } from './isInteger';
+import { isMap } from './isMap';
 
 export {
   castArray,
@@ -20,4 +21,5 @@ export {
   isDate,
   isFunction,
   isInteger,
+  isMap,
 };
