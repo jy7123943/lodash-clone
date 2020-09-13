@@ -6,7 +6,6 @@ describe('isArrayBuffer', () => {
   });
 
   it('returns false if parameter is not an array type', () => {
-    expect(isArrayBuffer(document.body.children)).toBe(false);
     expect(isArrayBuffer(1)).toBe(false);
     expect(isArrayBuffer('abc')).toBe(false);
     expect(isArrayBuffer(undefined)).toBe(false);
