@@ -14,6 +14,7 @@ import { isNil } from './isNil';
 import { isNull } from './isNull';
 import { isNumber } from './isNumber';
 import { isObject } from './isObject';
+import { isObjectLike } from './isObjectLike';
 
 export {
   castArray,
@@ -32,4 +33,5 @@ export {
   isNull,
   isNumber,
   isObject,
+  isObjectLike,
 };
