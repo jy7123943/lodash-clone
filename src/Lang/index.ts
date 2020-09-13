@@ -6,6 +6,7 @@ import { isArrayLike } from './isArrayLike';
 import { isArrayLikeObject } from './isArrayLikeObject';
 import { isBoolean } from './isBoolean';
 import { isDate } from './isDate';
+import { isElement } from './isElement';
 import { isFunction } from './isFunction';
 import { isInteger } from './isInteger';
 import { isMap } from './isMap';
@@ -22,6 +23,7 @@ export {
   isArrayLikeObject,
   isBoolean,
   isDate,
+  isElement,
   isFunction,
   isInteger,
   isMap,
