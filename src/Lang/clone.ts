@@ -17,10 +17,7 @@ export const clone = (value: any): any => {
 
   if (typeof value === 'object') return { ...value };
 
-  const isPrimitive = typeof value === 'boolean'
-    || typeof value === 'number'
-    || typeof value === 'string';
-
+  const isPrimitive = Object(value) !== value;
   if (isPrimitive) return value;
 
   return {};
