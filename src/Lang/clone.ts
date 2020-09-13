@@ -9,6 +9,16 @@
  */
 
 export const clone = <T>(value: T): any => {
+  const isNotSupported = value instanceof Element
+    || value instanceof HTMLDocument
+    || value instanceof WeakMap
+    || value instanceof Error
+    || value instanceof Function;
+  if (isNotSupported) return {};
+
+  const isPrimitive = Object(value) !== value;
+  if (isPrimitive) return value;
+
   if (value instanceof Map) return new Map(value);
   if (value instanceof Set) return new Set(value);
   if (value instanceof Date) return new Date(value);
@@ -16,9 +26,6 @@ export const clone = <T>(value: T): any => {
   if (value instanceof ArrayBuffer || Array.isArray(value)) return value.slice(0);
 
   if (typeof value === 'object') return { ...value };
-
-  const isPrimitive = Object(value) !== value;
-  if (isPrimitive) return value;
 
   return {};
 };
