@@ -13,6 +13,7 @@ import { isMap } from './isMap';
 import { isNil } from './isNil';
 import { isNull } from './isNull';
 import { isNumber } from './isNumber';
+import { isObject } from './isObject';
 
 export {
   castArray,
@@ -30,4 +31,5 @@ export {
   isNil,
   isNull,
   isNumber,
+  isObject,
 };
