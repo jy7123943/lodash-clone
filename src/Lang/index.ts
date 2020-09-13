@@ -5,6 +5,7 @@ import { isArrayBuffer } from './isArrayBuffer';
 import { isArrayLike } from './isArrayLike';
 import { isArrayLikeObject } from './isArrayLikeObject';
 import { isBoolean } from './isBoolean';
+import { isDate } from './isDate';
 
 export {
   castArray,
@@ -14,4 +15,5 @@ export {
   isArrayLike,
   isArrayLikeObject,
   isBoolean,
+  isDate,
 };
