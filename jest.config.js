@@ -1,7 +1,7 @@
 module.exports = {
   projects: ['<rootDir>/__tests__'],
   collectCoverageFrom: ['__tests__/**'],
-  testPathIgnorePatterns: ['node_modules', 'dist'],
+  testPathIgnorePatterns: ['node_modules', 'dist', '__tests__/utils'],
   coverageThreshold: {
     global: {
       branches: 70,
