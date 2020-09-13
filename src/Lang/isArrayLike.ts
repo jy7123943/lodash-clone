@@ -9,13 +9,15 @@ import { isArray } from './isArray';
  * (boolean): Returns true if value is array-like, else false.
  */
 
+type ObjectOrString = Record<string, any> | string;
+
 export const isArrayLike = <T>(value: T): boolean => (
   isArray(value)
     || (
       !!value
         && typeof value !== 'function'
-        && (value as Record<string, any>).hasOwnProperty('length')
-        && (value as Record<string, any>).length >= 0
-        && (value as Record<string, any>).length <= Number.MAX_SAFE_INTEGER
+        && (value as ObjectOrString).hasOwnProperty('length')
+        && (value as ObjectOrString).length >= 0
+        && (value as ObjectOrString).length <= Number.MAX_SAFE_INTEGER
     )
 );
