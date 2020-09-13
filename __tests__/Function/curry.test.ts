@@ -24,7 +24,7 @@ describe('curry', () => {
     expect(newFn(1, 2, 3)).toStrictEqual([1, 2, 3]);
   });
 
-  it('uses placeholder', () => {
+  it('allows placeholder', () => {
     const mockFn = function(a: number, b: number, c: number) {
       return [a, b, c];
     };
