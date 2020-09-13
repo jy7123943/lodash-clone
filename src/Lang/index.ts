@@ -9,6 +9,7 @@ import { isDate } from './isDate';
 import { isFunction } from './isFunction';
 import { isInteger } from './isInteger';
 import { isMap } from './isMap';
+import { isNil } from './isNil';
 
 export {
   castArray,
@@ -22,4 +23,5 @@ export {
   isFunction,
   isInteger,
   isMap,
+  isNil,
 };
