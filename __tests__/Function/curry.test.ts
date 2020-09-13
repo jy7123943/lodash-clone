@@ -22,6 +22,17 @@ describe('curry', () => {
     expect(newFn(1)(2)(3)).toStrictEqual([1, 2, 3]);
     expect(newFn(1, 2)(3)).toStrictEqual([1, 2, 3]);
     expect(newFn(1, 2, 3)).toStrictEqual([1, 2, 3]);
-    // console.log(newFn(1)(_, 3)(2))
+  });
+
+  it('uses placeholder', () => {
+    const mockFn = function(a: number, b: number, c: number) {
+      return [a, b, c];
+    };
+
+    const newFn = curry(mockFn);
+
+    expect(newFn(1)(_, 3)(2)).toStrictEqual([1, 2, 3]);
+    expect(newFn(1)(_, _)(_)(2)(3)).toStrictEqual([1, 2, 3]);
+    expect(newFn(1)(_, 4)(_)(2)).toStrictEqual([1, 2, 4]);
   });
 });
