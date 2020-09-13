@@ -10,6 +10,7 @@ import { isFunction } from './isFunction';
 import { isInteger } from './isInteger';
 import { isMap } from './isMap';
 import { isNil } from './isNil';
+import { isNull } from './isNull';
 
 export {
   castArray,
@@ -24,4 +25,5 @@ export {
   isInteger,
   isMap,
   isNil,
+  isNull,
 };
