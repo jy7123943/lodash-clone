@@ -7,6 +7,7 @@ import { isArrayLikeObject } from './isArrayLikeObject';
 import { isBoolean } from './isBoolean';
 import { isDate } from './isDate';
 import { isFunction } from './isFunction';
+import { isInteger } from './isInteger';
 
 export {
   castArray,
@@ -18,4 +19,5 @@ export {
   isBoolean,
   isDate,
   isFunction,
+  isInteger,
 };
