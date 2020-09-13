@@ -8,7 +8,7 @@
  * (*): Returns the cloned value.
  */
 
-export const clone = (value: any): any => {
+export const clone = <T>(value: T): any => {
   if (value instanceof Map) return new Map(value);
   if (value instanceof Set) return new Set(value);
   if (value instanceof Date) return new Date(value);
