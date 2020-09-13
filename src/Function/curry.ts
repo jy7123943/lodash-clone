@@ -14,11 +14,29 @@ import { _ } from 'src/index';
 type Func = (...args: any[]) => any;
 
 export const curry = (func: Func, arity = func.length): Func => {
-  return (...params) => {
+  function wrapper(prevParams: any[]) {
+    return (...nextParams: any[]) => {
+      const newParams = prevParams
+        .map(param => param === _ ? (nextParams.shift() || param) : param)
+        .concat(nextParams);
+
+      return newCurry(...newParams);
+    };
+  }
+
+  function newCurry(...params: any[]): Func {
+    const hasPlaceholder = params.some(param => param === _);
+
+    if (hasPlaceholder) {
+      return wrapper(params);
+    }
+
     if (params.length < arity) {
-      return curry(func.bind(null, ...params), arity - params.length);
+      return newCurry.bind(null, ...params);
     } else {
       return func.call(null, ...params);
     }
-  };
+  }
+
+  return newCurry;
 };
