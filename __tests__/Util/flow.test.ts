@@ -27,7 +27,7 @@ describe('flow', () => {
   });
 
   it('returns 30 after invoking add, double and tripple', () => {
-    const flowedFn = flow([add, double, tripple]);
+    const flowedFn = flow<number>([add, double, tripple]);
 
     const result = flowedFn(2, 3);
 

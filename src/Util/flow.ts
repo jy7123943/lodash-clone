@@ -6,12 +6,12 @@
 
 type Func = (...params: any[]) => unknown;
 
-export const flow = <ReturnType>(funcs: Func[]) => {
-  return function(...params: any[]): ReturnType {
+export const flow = <ReturnType>(funcs: Func[]) => (
+  function(...params: any[]): ReturnType {
     const [result] = funcs.reduce((previousValue, currentFunc) => (
       [currentFunc(...previousValue)]
     ), params);
 
     return result;
-  };
-};
+  }
+);
