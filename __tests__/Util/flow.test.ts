@@ -7,8 +7,10 @@ describe('flow', () => {
   it('returns the new composite function', () => {
     const fn = jest.fn();
 
-    expect(typeof flow([fn])).toBe('function');
-    expect(flow([fn])).not.toBe(fn);
+    const flowedFn = flow([fn]);
+
+    expect(typeof flowedFn).toBe('function');
+    expect(flowedFn).not.toBe(fn);
   });
 
   it('invokes functions in sequence with the return value of previous', () => {
