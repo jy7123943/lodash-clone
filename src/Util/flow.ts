@@ -6,4 +6,8 @@
 
 export const flow = (funcs: Function[]) => {
   // type here
+
+  return function(): any {
+    // return new function
+  };
 };
