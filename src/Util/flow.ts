@@ -4,15 +4,14 @@
  * Returns: (Function): Returns the new composite function.
  */
 
-type Func<T> = (...params: T[]) => unknown;
+type Func = (...params: any[]) => unknown;
 
-export const flow = <T>(funcs: Func<T>[]) => {
-  // type here
-  return function(...params: unknown[]): any {
-    // return new function
-    params.reduce((previousValue, currentFunc) => {
-      console.log('🚀 ~ file: flow.ts ~ line 14 ~ params.reduce ~ currentFunc', currentFunc);
-      console.log('🚀 ~ file: flow.ts ~ line 14 ~ params.reduce ~ previousValue', previousValue);
-    }, params);
+export const flow = <ReturnType>(funcs: Func[]) => {
+  return function(...params: any[]): ReturnType {
+    const [result] = funcs.reduce((previousValue, currentFunc) => (
+      [currentFunc(...previousValue)]
+    ), params);
+
+    return result;
   };
 };
