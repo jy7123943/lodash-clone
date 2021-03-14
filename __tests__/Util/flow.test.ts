@@ -14,12 +14,14 @@ describe('flow', () => {
   });
 
   it('invokes functions in sequence with the return value of previous', () => {
-    const flowedFn = flow([add, doubles]);
+    const foo = jest.fn().mockReturnValue('hello');
+    const bar = jest.fn().mockReturnValue('world');
+    const flowedFn = flow([foo, bar]);
 
     const result = flowedFn(2, 3);
 
-    expect(add).toHaveBeenCalledWith(2, 3);
-    expect(doubles).toHaveBeenCalledWith(5);
-    expect(result).toBe(10);
+    expect(foo).toHaveBeenCalledWith(2, 3);
+    expect(bar).toHaveBeenCalledWith('hello');
+    expect(result).toBe('world');
   });
 });
