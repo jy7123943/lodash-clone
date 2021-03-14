@@ -4,6 +4,6 @@
  * Returns: (Function): Returns the new composite function.
  */
 
-export const flow = () => {
+export const flow = (funcs: Function[]) => {
   // type here
 };
