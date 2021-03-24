@@ -1,6 +1,14 @@
 import { unique } from 'src/index';
 
 describe('unique', () => {
+  it('returns new array', () => {
+    const param = [1, 2];
+    const result = unique(param);
+
+    expect(param).toEqual(result);
+    expect(param).not.toBe(result);
+  });
+
   it('returns duplicate-free version of an array', () => {
     expect(unique([2, 1, 2, 3, 1])).toEqual([2, 1, 3]);
     expect(unique(['1', 1])).toEqual(['1', 1]);
