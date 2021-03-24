@@ -4,14 +4,12 @@
  * Returns: (Function): Returns the new composite function.
  */
 
-type Func = (...params: any[]) => unknown;
+type Func<ReturnType> = (...params: any[]) => ReturnType;
 
-export const flow = <ReturnType>(funcs: Func[]) => (
+export const flow = <ReturnType>(funcs: Func<ReturnType>[]) => (
   function(...params: any[]): ReturnType {
-    const [result] = funcs.reduce((previousValue, currentFunc) => (
-      [currentFunc(...previousValue)]
-    ), params);
-
-    return result;
+    return funcs.slice(1).reduce((previousValue, currentFunc) => (
+      currentFunc(previousValue)
+    ), funcs[0](...params));
   }
 );
