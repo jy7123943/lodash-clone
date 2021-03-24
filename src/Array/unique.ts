@@ -28,3 +28,14 @@ export const unique = <T>(array: T[]): T[] => {
     return true;
   });
 };
+
+/* Another way to make unique array
+export const unique = <T>(array: T[]): T[] => {
+  const uniqueSet = new Set(array);
+  const result: T[] = [];
+
+  uniqueSet.forEach(v => result.push(v));
+
+  return result;
+};
+*/
