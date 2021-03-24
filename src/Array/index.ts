@@ -4,6 +4,7 @@ import { concat } from './concat';
 import { difference } from './difference';
 import { differenceBy } from './differenceBy';
 import { differenceWith } from './differenceWith';
+import { unique } from './unique';
 import { uniqueBy } from './uniqueBy';
 
 export {
@@ -13,5 +14,6 @@ export {
   difference,
   differenceBy,
   differenceWith,
+  unique,
   uniqueBy,
 };
