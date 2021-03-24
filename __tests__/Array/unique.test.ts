@@ -3,6 +3,7 @@ import { unique } from 'src/index';
 describe('unique', () => {
   it('returns duplicate-free version of an array', () => {
     expect(unique([2, 1, 2, 3, 1])).toEqual([2, 1, 3]);
+    expect(unique(['1', 1])).toEqual(['1', 1]);
     expect(unique([NaN, +0, -0, null, NaN, undefined])).toEqual([NaN, 0, null, undefined]);
     expect(unique(['string', true, true, 'string', 'str', false])).toEqual(
       ['string', true, 'str', false],
