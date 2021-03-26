@@ -11,7 +11,7 @@ function FormatCategory(category) {
 
 (async function command() {
   try {
-    const { category, methodName } = await inquirer.prompt([
+    const result = await inquirer.prompt([
       {
         type: 'input',
         name: 'category',
@@ -24,15 +24,18 @@ function FormatCategory(category) {
       },
     ]);
 
+    const category = result.category.trim();
+    const methodName = result.methodName.trim();
+
     if (category === '' || methodName === '') {
       throw new Error(`${chalk.red('입력값이 없습니다.')}`);
     }
 
     sh.exec(
-      `npx hygen make main --category ${category} --methodName ${methodName}`,
+      `npx hygen make main --category ${FormatCategory(category)} --methodName ${methodName}`,
     );
     sh.exec(
-      `npx hygen make test --category ${category} --methodName ${methodName}`,
+      `npx hygen make test --category ${FormatCategory(category)} --methodName ${methodName}`,
     );
   } catch (e) {
     console.error(e);
