@@ -1,5 +1,5 @@
 ---
-to: __tests__/<%= category %>/<%= methodName %>.ts
+to: __tests__/<%= category %>/<%= methodName %>.test.ts
 ---
 
 import { <%= methodName %> } from 'src/index';
