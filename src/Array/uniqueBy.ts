@@ -1,3 +1,4 @@
+import { isSameValue, key } from '../utils';
 import { identity } from './../Util/identity';
 /** uniqBy(array, [iteratee=_.identity])
  * This method is like _.uniq except that it accepts iteratee which is invoked for each element in array to generate the criterion by which uniqueness is computed. The order of result values is determined by the order they occur in the array. The iteratee is invoked with one argument:
@@ -10,5 +11,16 @@ import { identity } from './../Util/identity';
 
 type Func = (...params: any[]) => unknown;
 export const uniqueBy = <T>(array: T[], iteratee: Func = identity): T[] => {
-  return array;
+  const uniqSet: Record<string, { value: unknown }> = {};
+
+  return [...array].filter((originalValue) => {
+    const value = iteratee(originalValue);
+
+    if (uniqSet[key(value)]) {
+      return !isSameValue(value, uniqSet[key(value)].value);
+    }
+    uniqSet[key(value)] = { value };
+
+    return true;
+  });
 };
