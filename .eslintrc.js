@@ -23,6 +23,7 @@ module.exports = {
       'code': 100,
       'ignoreComments': true,
       'ignoreUrls': true,
+      'ignoreTemplateLiterals': true,
     }],
     'semi': 2,
     'indent': [
