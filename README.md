@@ -9,9 +9,10 @@
 - [Array/differenceBy](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/differenceBy.ts)
 - [Array/differenceWith](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/differenceWith.ts)
 - [Array/flatten](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flatten.ts)
+- [Array/flattenDeep](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flattenDeep.ts)
+- [Array/flattenDepth](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flattenDepth.ts)
 - [Array/unique](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/unique.ts)
 - [Array/uniqueBy](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/uniqueBy.ts)
-- [Array/flattenDeep](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flattenDeep.ts)
 
 ## Collection
 
