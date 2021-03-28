@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is an array, else false.
  */
 
-export const isArray = <T>(value: T): boolean => (
+export const isArray = <T>(value: T | T[]): value is T[] => (
   Array.isArray(value)
 );
