@@ -9,6 +9,6 @@ import { isArrayLike } from './isArrayLike';
  * (boolean): Returns true if value is an array-like object, else false.
  */
 
-export const isArrayLikeObject = <T>(value: T): boolean => (
+export const isArrayLikeObject = (value: unknown): boolean => (
   isArrayLike(value) && typeof value === 'object'
 );

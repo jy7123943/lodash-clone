@@ -11,7 +11,7 @@ import { isArray } from './isArray';
 
 type ObjectOrString = Record<string, any> | string;
 
-export const isArrayLike = <T>(value: T): boolean => (
+export const isArrayLike = (value: unknown): boolean => (
   isArray(value)
     || (
       !!value

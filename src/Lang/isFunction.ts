@@ -7,6 +7,7 @@
  * (boolean): Returns true if value is a function, else false.
  */
 
-export const isFunction = <T>(value: T): boolean => (
+type Func = (...params: any[]) => any;
+export const isFunction = (value: unknown): value is Func => (
   typeof value === 'function'
 );

@@ -8,6 +8,6 @@
  * (boolean): Returns true if value is an integer, else false.
  */
 
-export const isInteger = <T>(value: T): boolean => (
+export const isInteger = (value: unknown): boolean => (
   Number.isInteger(value)
 );

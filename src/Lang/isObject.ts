@@ -7,6 +7,7 @@
  * (boolean): Returns true if value is an object, else false.
  */
 
-export const isObject = <T>(value: T): boolean => (
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const isObject = (value: unknown): value is object => (
   value instanceof Object
 );

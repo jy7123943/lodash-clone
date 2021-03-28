@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is a boolean, else false.
  */
 
-export const isBoolean = <T>(value: T): boolean => (
+export const isBoolean = (value: unknown): value is boolean => (
   typeof value === 'boolean'
 );

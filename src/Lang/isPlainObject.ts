@@ -8,7 +8,7 @@ import { isNil } from './isNil';
  * (boolean): Returns true if value is a plain object, else false.
  */
 
-export const isPlainObject = <T>(value: T): boolean => {
+export const isPlainObject = (value: unknown): boolean => {
   if (isNil(value)) return false;
   const constructor = (value as Record<string, any>).constructor;
 

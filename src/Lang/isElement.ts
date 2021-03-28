@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is a DOM element, else false.
  */
 
-export const isElement = <T>(value: T): boolean => (
+export const isElement = (value: unknown): value is Element => (
   value instanceof Element
 );

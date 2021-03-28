@@ -8,6 +8,6 @@ import { isNull } from './isNull';
  * (boolean): Returns true if value is object-like, else false.
  */
 
-export const isObjectLike = <T>(value: T): boolean => (
+export const isObjectLike = (value: unknown): boolean => (
   !isNull(value) && typeof value === 'object'
 );

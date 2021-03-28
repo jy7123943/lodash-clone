@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is a date object, else false.
  */
 
-export const isDate = <T>(value: T): boolean => (
+export const isDate = (value: unknown): value is Date => (
   value instanceof Date
 );

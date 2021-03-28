@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is an array buffer, else false.
  */
 
-export const isArrayBuffer = <T>(value: T): boolean => (
+export const isArrayBuffer = (value: unknown): value is ArrayBuffer => (
   value instanceof ArrayBuffer
 );

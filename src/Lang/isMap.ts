@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is a map, else false.
  */
 
-export const isMap = <T>(value: T): boolean => (
+export const isMap = <MapKey, MapValue>(value: unknown): value is Map<MapKey, MapValue> => (
   value instanceof Map
 );

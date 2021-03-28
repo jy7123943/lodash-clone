@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is null, else false.
  */
 
-export const isNull = <T>(value: T): boolean => (
+export const isNull = (value: unknown): value is null => (
   value === null
 );
