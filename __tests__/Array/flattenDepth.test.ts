@@ -17,8 +17,9 @@ describe('flattenDepth', () => {
     expect(flattenDepth([1, [2, [3, [4, [5]]]]], 6)).toEqual([1, 2, 3, 4, 5]);
   });
 
-  it('does not flatten if depth is negative number', () => {
+  it('does not flatten if depth is zero or negative number', () => {
     expect(flattenDepth([1, [2, [3, [4, [5]]]]], -1)).toEqual([1, [2, [3, [4, [5]]]]]);
+    expect(flattenDepth([1, [2, [3, [4, [5]]]]], 0)).toEqual([1, [2, [3, [4, [5]]]]]);
   });
 
   it('sets undefined for empty slots in arrays', () => {
