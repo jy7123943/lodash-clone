@@ -14,7 +14,7 @@ describe('flatten', () => {
     expect(flatten([[{ a: 1 }], { b: 2 }])).toEqual([{ a: 1 }, { b: 2 }]);
   });
 
-  it('does not remove empty slots in arrays', () => {
+  it('sets undefined for empty slots in arrays', () => {
     expect(flatten([1, [2], , 4])).toEqual([1, 2, undefined, 4]);
   });
 });
