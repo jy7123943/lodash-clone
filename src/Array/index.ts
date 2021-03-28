@@ -5,6 +5,7 @@ import { difference } from './difference';
 import { differenceBy } from './differenceBy';
 import { differenceWith } from './differenceWith';
 import { flatten } from './flatten';
+import { flattenDeep } from './flattenDeep';
 import { unique } from './unique';
 import { uniqueBy } from './uniqueBy';
 
@@ -16,6 +17,7 @@ export {
   differenceBy,
   differenceWith,
   flatten,
+  flattenDeep,
   unique,
   uniqueBy,
 };

@@ -11,6 +11,7 @@
 - [Array/flatten](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flatten.ts)
 - [Array/unique](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/unique.ts)
 - [Array/uniqueBy](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/uniqueBy.ts)
+- [Array/flattenDeep](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flattenDeep.ts)
 
 ## Collection
 
