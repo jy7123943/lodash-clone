@@ -34,6 +34,11 @@ function FormatCategory(category) {
     sh.exec(
       `npx hygen make main --category ${FormatCategory(category)} --methodName ${methodName}`,
     );
+
+    sh.exec(
+      `echo "- [${FormatCategory(category)}/${methodName}](https://github.com/jy7123943/lodash-clone/blob/master/src/${FormatCategory(category)}/${methodName}.ts)" >> ./README.md`,
+    );
+
     sh.exec(
       `npx hygen make test --category ${FormatCategory(category)} --methodName ${methodName}`,
     );
