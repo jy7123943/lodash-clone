@@ -9,7 +9,8 @@
 */
 
 export const nth = <ArrayItem>(
-  array: ArrayItem[], n: number,
-): ArrayItem => {
-  return array[n];
+  array: ArrayItem[],
+  n = 0,
+): ArrayItem | undefined => {
+  return array[n < 0 ? array.length + n : n];
 };
