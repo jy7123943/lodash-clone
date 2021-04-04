@@ -11,6 +11,7 @@
 - [Array/flatten](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flatten.ts)
 - [Array/flattenDeep](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flattenDeep.ts)
 - [Array/flattenDepth](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/flattenDepth.ts)
+- [Array/nth](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/nth.ts)
 - [Array/unique](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/unique.ts)
 - [Array/uniqueBy](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/uniqueBy.ts)
 
