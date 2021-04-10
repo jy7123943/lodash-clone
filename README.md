@@ -23,6 +23,7 @@
 - [Collection/find](https://github.com/jy7123943/lodash-clone/blob/master/src/Collection/find.ts)
 - [Collection/forEach](https://github.com/jy7123943/lodash-clone/blob/master/src/Collection/forEach.ts)
 - [Collection/forEachRight](https://github.com/jy7123943/lodash-clone/blob/master/src/Collection/forEachRight.ts)
+- [Collection/shuffle](https://github.com/jy7123943/lodash-clone/blob/master/src/Collection/shuffle.ts)
 
 ## Date
 
