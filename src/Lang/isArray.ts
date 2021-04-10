@@ -7,6 +7,6 @@
  * (boolean): Returns true if value is an array, else false.
  */
 
-export const isArray = <T>(value: T | T[]): value is T[] => (
+export const isArray = (value: unknown | unknown[]): value is unknown[] => (
   Array.isArray(value)
 );
