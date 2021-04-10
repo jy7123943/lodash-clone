@@ -7,6 +7,7 @@
  * (Array): Returns the new shuffled array.
 */
 
-export const shuffle = () => {
+export const shuffle = <T>(collection: T[] | Record<string, T>): T[] => {
   // Write here
+  
 };
