@@ -25,8 +25,8 @@ describe('shuffle', () => {
     const secondResult = shuffle(obj);
 
     expect(firstResult).toBeInstanceOf(Array);
-    expect(firstResult).toEqual(expect.arrayContaining([1, 2, 3]));
-    expect(secondResult).toEqual(expect.arrayContaining([1, 2, 3]));
+    expect(firstResult).toEqual(expect.arrayContaining([1, 2, 3, 4, 5]));
+    expect(secondResult).toEqual(expect.arrayContaining([1, 2, 3, 4, 5]));
     expect(firstResult).not.toEqual(secondResult);
   });
 
