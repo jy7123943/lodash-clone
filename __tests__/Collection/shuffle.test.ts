@@ -20,7 +20,7 @@ describe('shuffle', () => {
   });
 
   it(`shuffles object's value and return the new shuffled array`, () => {
-    const obj = { a: 1, b: 2, c: 3 };
+    const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 };
     const firstResult = shuffle(obj);
     const secondResult = shuffle(obj);
 
@@ -31,7 +31,7 @@ describe('shuffle', () => {
   });
 
   it('returns the new shuffled array containing object', () => {
-    const array = [{ key: 'a' }, { key: 'b' }, { key: 'c' }];
+    const array = [{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }, { key: 'e' }];
     const firstResult = shuffle(array);
     const secondResult = shuffle(array);
 
