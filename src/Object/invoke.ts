@@ -10,10 +10,10 @@
  * (*): Returns the result of the invoked method.
 */
 
-export const invoke = <ObjectValue, InvokeArg, Result>(
+export const invoke = <ObjectValue = unknown, Result = unknown>(
   obj: Record<string, ObjectValue>,
   path: string,
-  ...args: InvokeArg[]
+  ...args: unknown[]
 ): Result => {
   // Write here
 };
