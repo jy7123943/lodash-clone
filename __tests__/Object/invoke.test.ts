@@ -9,6 +9,14 @@ describe('invoke', () => {
     expect(spy).toHaveBeenCalledWith(1, [2], 3);
   });
 
+  it('should accept array path as well', () => {
+    const spy = jest.fn();
+    const obj = { a: { b: { c: spy }}};
+    invoke(obj, ['a', 'b', 'c'], 1, [2], 3);
+
+    expect(spy).toHaveBeenCalledWith(1, [2], 3);
+  });
+
   it('should invoke the method at path of nested object', () => {
     const spy = jest.fn();
     const obj = {
