@@ -1,4 +1,4 @@
-import { isArray } from 'src/index';
+import { isArray } from 'src/Lang/isArray';
 /** invoke(object, path, [args])
  * Invokes the method at path of object.
 
@@ -11,8 +11,8 @@ import { isArray } from 'src/index';
  * (*): Returns the result of the invoked method.
 */
 
-export const invoke = <ObjectValue = unknown, Result = unknown>(
-  obj: Record<string, ObjectValue>,
+export const invoke = <Result = unknown>(
+  obj: Record<string, any>,
   path: string | string[],
   ...args: unknown[]
 ): Result => {
@@ -20,5 +20,10 @@ export const invoke = <ObjectValue = unknown, Result = unknown>(
     ? path
     : path.replace(/\[|\]\.?/g, '.').split('.');
 
-
+  return paths.reduce((targetObj: any, currentPath, i: number) => (
+    i === paths.length - 1
+      // eslint-disable-next-line prefer-spread
+      ? targetObj[currentPath].apply(targetObj, args)
+      : targetObj[currentPath]
+  ), obj);
 };
