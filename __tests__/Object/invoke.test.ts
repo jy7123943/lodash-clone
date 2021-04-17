@@ -26,7 +26,7 @@ describe('invoke', () => {
     };
     invoke(obj, 'list[0].test');
 
-    expect(spy).toHaveBeenCalledWith(undefined);
+    expect(spy).toHaveBeenCalledWith();
   });
 
   it('should invoke the method of prototype at path of object', () => {
