@@ -59,6 +59,10 @@
 - [Lang/isObjectLike](https://github.com/jy7123943/lodash-clone/blob/master/src/Lang/isObjectLike.ts)
 - [Lang/isPlainObject](https://github.com/jy7123943/lodash-clone/blob/master/src/Lang/isPlainObject.ts)
 
+## Object
+
+- [Object/invoke](https://github.com/jy7123943/lodash-clone/blob/master/src/Object/invoke.ts)
+
 ## Util
 
 - [Util/flow](https://github.com/jy7123943/lodash-clone/blob/master/src/Util/flow.ts)
