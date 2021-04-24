@@ -22,7 +22,7 @@ export const shuffle = <T>(collection: T[] | Record<string, T>): T[] => {
   while (values.length > 0) {
     const [randomValue] = values.splice(randomNum(0, values.length - 1), 1);
 
-    result.push(randomValue);
+    result.unshift(randomValue);
   }
 
   return result;
