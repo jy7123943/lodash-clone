@@ -10,6 +10,7 @@ import { flattenDepth } from './flattenDepth';
 import { nth } from './nth';
 import { unique } from './unique';
 import { uniqueBy } from './uniqueBy';
+import { zip } from './zip';
 
 export {
   chunk,
@@ -24,4 +25,5 @@ export {
   nth,
   unique,
   uniqueBy,
+  zip,
 };
