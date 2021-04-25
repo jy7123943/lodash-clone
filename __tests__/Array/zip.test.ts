@@ -19,5 +19,13 @@ describe('zip', () => {
       [undefined, 2, false],
       [undefined, 3, undefined],
     ]);
+
+    expect(zip(['a'], [1, 2, 3, 4, 5], [true, false], [null, null, undefined])).toEqual([
+      ['a', 1, true, null],
+      [undefined, 2, false, null],
+      [undefined, 3, undefined, undefined],
+      [undefined, 4, undefined, undefined],
+      [undefined, 5, undefined, undefined],
+    ]);
   });
 });
