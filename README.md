@@ -14,6 +14,7 @@
 - [Array/nth](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/nth.ts)
 - [Array/unique](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/unique.ts)
 - [Array/uniqueBy](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/uniqueBy.ts)
+- [Array/unzip](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/unzip.ts)
 - [Array/zip](https://github.com/jy7123943/lodash-clone/blob/master/src/Array/zip.ts)
 
 ## Collection
